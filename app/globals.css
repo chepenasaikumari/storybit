@@ -1,0 +1,49 @@
+/* --- Tailwind Core --- */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- Global Styles --- */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #000;   /* Streaming-style black background */
+  color: #fff;              /* White text */
+  font-family: sans-serif;
+}
+
+/* Needed by Next.js App Router */
+#__next, #root {
+  height: 100%;
+}
+
+/* --- Container Override (Netflix-like width) --- */
+.container {
+  max-width: 80rem;      /* same as Tailwind max-w-7xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;    /* px-4 */
+  padding-right: 1rem;
+}
+
+/* --- Hide scrollbar for Movie Rows (clean UI) --- */
+.movie-row {
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.movie-row::-webkit-scrollbar {
+  display: none;            /* Chrome/Safari */
+}
+
+/* --- Smooth scrolling for horizontal lists --- */
+.movie-row {
+  scroll-behavior: smooth;
+}
+
+/* Optional hover improvement */
+.movie-row > div:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s ease;
+}
